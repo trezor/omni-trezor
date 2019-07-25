@@ -51,6 +51,10 @@ the new terms, please stop using the Service.
 
 Tektite Software LLC does not collect any personal details of the visitors of https://omnitrezor.com.  Cryptocurrency transaction details and wallet private key information are not logged or stored in way by Tektite Software LLC.  Signed transactions will be broadcast to the cryptocurrency network by third parties not under the control of Tektite Software LLC.  We reserve the right to implement website analytics software such as Google Analytics, which may utilize Cookies.
 
+## Losses
+
+Tektite Software LLC, its employees, and any contributors to https://omnitrezor.com can not be held liable for any losses sustained as a result of using the Service.  The Service is provided as-is with no warranties or guarantees.
+
 ## MIT License
 
 © 2019 Tektite Software, LLC

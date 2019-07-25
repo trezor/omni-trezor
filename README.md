@@ -9,7 +9,6 @@ To use this tool, simply go to [https://omnitrezor.com](https://omnitrezor.com) 
 * Only Simple Send operations are currently supported
 * Send addresses must have at least one OMNI asset as well as at least one unspent Bitcoin output greater than or equal to 8000 Satoshi (0.00008 BTC).
 * Key data throughout the transaction process are logged to the Javascript console.
-* The full OP_RETURN can be viewed on the "Sign & Send" page, simply look for the corresponding HTML container in your developer console and remove the `is-hidden` class.
 
 ## Development & Contributing
 

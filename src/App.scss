@@ -238,6 +238,18 @@ address {
         margin-bottom: 1rem;
       }
 
+      & > p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 0.5rem;
+        }
+      }
+
       section {
         font-size: 1rem;
         display: flex;
@@ -258,6 +270,9 @@ address {
         table {
           td {
             text-align: center;
+            small {
+              display: inline;
+            }
           }
           .omni-segment {
             font-family: monospace;

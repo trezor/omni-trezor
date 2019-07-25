@@ -28,7 +28,7 @@ class SelectAddress extends React.Component {
                           </a>
                           <small>ID: {coin.propertyinfo.propertyid}</small>
                         </td>
-                        <td>{parseInt(coin.value)*0.00000001}</td>
+                        <td>{coin.divisible ? parseInt(coin.value)*0.00000001 : parseInt(coin.value)}</td>
                       </tr>
                     );
                   })}

@@ -1,8 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 class ConfirmTransaction extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      opreturnVisible: false
+    }
+  }
+
   render() {
     return(
       <article className="confirm-transaction-container">
@@ -15,7 +23,19 @@ class ConfirmTransaction extends React.Component {
           <address>{this.props.sendAddress.address}</address>
         </section>
 
-        <section className="opreturn-details is-hidden">
+        <p className="opreturn-details-toggle" onClick={this.toggleOpreturnDetails}>
+          {this.state.opreturnVisible ?
+            <FontAwesomeIcon icon={faChevronUp} />
+          :
+            <FontAwesomeIcon icon={faChevronDown} />
+          }
+          {this.state.opreturnVisible ?
+            " Hide OP_RETURN Details"
+          :
+            " Show OP_RETURN Details"
+          }
+        </p>
+        <section className={`opreturn-details ${this.state.opreturnVisible ? "" : "is-hidden"}`}>
           <small>OP_RETURN data for the OMNI transaction.  This may be shown on your Trezor depending on firmware version.</small>
           <table>
             <tbody>
@@ -35,7 +55,14 @@ class ConfirmTransaction extends React.Component {
                 <td><code>{this._hexToString(this.props.transactionIO.opreturnDataSegments[0])}</code></td>
                 <td><code>{parseInt(this.props.transactionIO.opreturnDataSegments[1], 16)}</code></td>
                 <td><code>{parseInt(this.props.transactionIO.opreturnDataSegments[2], 16)}</code></td>
-                <td><code>{parseInt(this.props.transactionIO.opreturnDataSegments[3], 16) * 0.00000001}</code></td>
+                <td>
+                  <code>{this.props.transactionElements.asset.divisible ? parseInt(this.props.transactionIO.opreturnDataSegments[3], 16) * 0.00000001 : parseInt(this.props.transactionIO.opreturnDataSegments[3], 16)}</code>
+                  {this.props.transactionElements.asset.divisible ?
+                    <small>(Divisible)</small>
+                  :
+                    <small>(Not Divisible)</small>
+                  }
+                </td>
               </tr>
             </tbody>
           </table>
@@ -60,6 +87,14 @@ class ConfirmTransaction extends React.Component {
         </button>
       </article>
     );
+  }
+
+  toggleOpreturnDetails = () => {
+    this.setState((state, props) => {
+      return {
+        opreturnVisible: !state.opreturnVisible
+      }
+    });
   }
 
   signSend = () => {

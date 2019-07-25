@@ -227,6 +227,10 @@ class App extends React.Component {
 
       if (transactionResults.success === true) {
         this.setStep(4);
+        ReactGA.event({
+          category: 'Transaction',
+          action: 'Success'
+        })
       } else {
         alert("There was an issue completing the transaction.\nSee the console for details.");
       }
@@ -239,7 +243,11 @@ class App extends React.Component {
     let omniPrefix = '6f6d6e69';
     let omniVersion = '0000';
     let omniAssetId = parseInt(this.state.transactionElements.asset.id).toString(16).padStart(12, 0);
-    let omniAmount = (this.state.transactionElements.amount * 100000000).toString(16).padStart(16, 0);
+    let omniAmount = this.state.transactionElements.amount;
+    if (this.state.transactionElements.asset.divisible === true) {
+      omniAmount = (omniAmount * 100000000);
+    }
+    omniAmount = omniAmount.toString(16).padStart(16, 0);
     let omniSegments = [
       omniPrefix, // OMNI
       omniVersion,     // Version
