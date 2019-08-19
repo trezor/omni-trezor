@@ -1,10 +1,10 @@
-# [OMNI Wallet for Trezor](https://omnitrezor.com)
+# [OMNI Wallet for Trezor](https://www.omnitrezor.com)
 
 This project aims to provide Trezor Hardware Wallet owners with an easy way of creating OMNI layer transactions with their device's Bitcoin accounts.
 
 ## Usage
 
-To use this tool, simply go to [https://omnitrezor.com](https://omnitrezor.com) and follow the steps.  As of this version, there are a few things to keep in mind:
+To use this tool, simply go to [https://www.omnitrezor.com](https://www.omnitrezor.com) and follow the steps.  As of this version, there are a few things to keep in mind:
 
 * Only Simple Send operations are currently supported
 * Send addresses must have at least one OMNI asset as well as at least one unspent Bitcoin output greater than or equal to 8000 Satoshi (0.00008 BTC).

@@ -53,7 +53,7 @@ class App extends React.Component {
   render() {
     TrezorConnect.manifest({
         email: 'admin@tektitesoftware.com',
-        appUrl: 'https://omnitrezor.com'
+        appUrl: 'https://www.omnitrezor.com'
     });
 
     return (

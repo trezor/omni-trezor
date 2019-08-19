@@ -1,7 +1,7 @@
 # Terms of Use
 
 Please read these Terms of Use ("Terms", "Terms of Use") carefully before
-using the https://omnitrezor.com website (the "Service") operated by Tektite Software LLC ("us", "we", or "our").
+using the https://www.omnitrezor.com website (the "Service") operated by Tektite Software LLC ("us", "we", or "our").
 
 Your access to and use of the Service is conditioned on your acceptance of and
 compliance with these Terms. These Terms apply to all visitors, users and
@@ -49,11 +49,11 @@ the new terms, please stop using the Service.
 
 ## Privacy
 
-Tektite Software LLC does not collect any personal details of the visitors of https://omnitrezor.com.  Cryptocurrency transaction details and wallet private key information are not logged or stored in way by Tektite Software LLC.  Signed transactions will be broadcast to the cryptocurrency network by third parties not under the control of Tektite Software LLC.  We reserve the right to implement website analytics software such as Google Analytics, which may utilize Cookies.
+Tektite Software LLC does not collect any personal details of the visitors of https://www.omnitrezor.com.  Cryptocurrency transaction details and wallet private key information are not logged or stored in way by Tektite Software LLC.  Signed transactions will be broadcast to the cryptocurrency network by third parties not under the control of Tektite Software LLC.  We reserve the right to implement website analytics software such as Google Analytics, which may utilize Cookies.
 
 ## Losses
 
-Tektite Software LLC, its employees, and any contributors to https://omnitrezor.com can not be held liable for any losses sustained as a result of using the Service.  The Service is provided as-is with no warranties or guarantees.
+Tektite Software LLC, its employees, and any contributors to https://www.omnitrezor.com can not be held liable for any losses sustained as a result of using the Service.  The Service is provided as-is with no warranties or guarantees.
 
 ## MIT License
 

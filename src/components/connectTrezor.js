@@ -13,7 +13,7 @@ class ConnectTrezor extends React.Component {
           <div class="checklist">
             <p>Have you...</p>
             <ul>
-              <li>Checked that the URL bar says https://omnitrezor.com ?</li>
+              <li>Checked that the URL bar says https://www.omnitrezor.com ?</li>
               <li>Verified your recipient address?</li>
               <li>Confirmed you have at least one output in your sending address greater than or equal to 0.00008 BTC?</li>
               <li>Audited this tool's <a href="https://github.com/tektite-software/omni-trezor" target="_blank" rel="noopener noreferrer">source code on GitHub?</a></li>
