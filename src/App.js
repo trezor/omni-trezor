@@ -247,7 +247,7 @@ class App extends React.Component {
     if (this.state.transactionElements.asset.divisible === true) {
       omniAmount = (omniAmount * 100000000);
     }
-    omniAmount = omniAmount.toString(16).padStart(16, 0);
+    omniAmount = parseFloat(omniAmount).toString(16).padStart(16, 0);
     let omniSegments = [
       omniPrefix, // OMNI
       omniVersion,     // Version
