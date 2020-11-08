@@ -2,6 +2,7 @@
   "name": "omni-trezor",
   "version": "0.2.0",
   "private": true,
+  "homepage" : "https://trezor.github.io/omni-trezor",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
