@@ -127,7 +127,7 @@ class App extends React.Component {
         </article>
 
         <footer className="app-footer">
-          <small>&copy; {(new Date(Date.now())).getFullYear()} Tektite Software LLC.  This tool is Open Source and <a href="https://github.com/trezor/omni-trezor" target="_blank" rel="noopener noreferrer">available on GitHub.</a></small>
+          <small>&copy; {(new Date(Date.now())).getFullYear()} Tektite Software LLC and SatoshiLabs.  This tool is Open Source and <a href="https://github.com/trezor/omni-trezor" target="_blank" rel="noopener noreferrer">available on GitHub.</a></small>
         </footer>
       </main>
     );
