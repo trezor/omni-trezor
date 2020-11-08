@@ -48,15 +48,14 @@ class App extends React.Component {
 
   render() {
     TrezorConnect.manifest({
-        email: 'admin@tektitesoftware.com',
-        appUrl: 'https://www.omnitrezor.com'
+        email: 'info@satoshilabs.com',
+        appUrl: 'https://trezor.github.io/omni-trezor'
     });
 
     return (
       <main className="app">
         <header className="app-header">
           <h1 className="title">OMNI Wallet for Trezor</h1>
-          <p className="subtitle">by <a href="https://tektitesoftware.com" target="_blank" rel="noopener noreferrer">Tektite Software</a></p>
         </header>
 
         <article className="app-body">
@@ -102,7 +101,7 @@ class App extends React.Component {
         </article>
 
         <footer className="app-footer">
-          <small>&copy; {(new Date(Date.now())).getFullYear()} Tektite Software LLC.  This tool is Open Source and <a href="https://github.com/tektite-software/omni-trezor" target="_blank" rel="noopener noreferrer">available on GitHub.</a></small>
+          <small>&copy; {(new Date(Date.now())).getFullYear()} Tektite Software LLC.  This tool is Open Source and <a href="https://github.com/trezor/omni-trezor" target="_blank" rel="noopener noreferrer">available on GitHub.</a></small>
         </footer>
       </main>
     );

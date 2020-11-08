@@ -13,11 +13,11 @@ class ConnectTrezor extends React.Component {
           <div className="checklist">
             <p>Have you...</p>
             <ul>
-              <li>Checked that the URL bar says https://www.omnitrezor.com ?</li>
+              <li>Checked that the URL bar says https://trezor.github.io/omni-trezor ?</li>
               <li>Verified your recipient address?</li>
               <li>Confirmed you have at least one output in your sending address greater than or equal to 0.00008 BTC?</li>
-              <li>Audited this tool's <a href="https://github.com/tektite-software/omni-trezor" target="_blank" rel="noopener noreferrer">source code on GitHub?</a></li>
-              <li>Read the <a href="https://github.com/tektite-software/omni-trezor/blob/master/terms_of_use.md" target="_blank" rel="noopener noreferrer">Terms of Use?</a></li>
+              <li>Audited this tool's <a href="https://github.com/trezor/omni-trezor" target="_blank" rel="noopener noreferrer">source code on GitHub?</a></li>
+              <li>Read the <a href="https://github.com/trezor/omni-trezor/blob/master/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of Use?</a></li>
             </ul>
           </div>
         </div>
@@ -25,7 +25,7 @@ class ConnectTrezor extends React.Component {
         <p>If so, this tool allows you to send OMNI transactions using your Trezor's Bitcoin addresses.  Click the button below to continue.</p>
 
         <button id="discoverAccounts" onClick={this.discoverAccounts} className="button">Connect to Trezor</button>
-        <small>By continuing you agree to the <a href="https://github.com/tektite-software/omni-trezor/blob/master/terms_of_use.md" target="_blank" rel="noopener noreferrer">Terms of Use.</a></small>
+        <small>By continuing you agree to the <a href="https://github.com/trezor/omni-trezor/blob/master/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of Use.</a></small>
       </article>
     )
   }
