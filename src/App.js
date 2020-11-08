@@ -1,6 +1,5 @@
 import React from 'react';
 import TrezorConnect from 'trezor-connect';
-import ReactGA from 'react-ga';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
@@ -41,9 +40,6 @@ class App extends React.Component {
       3: 'confirmTransaction',
       4: 'complete'
     };
-
-    ReactGA.initialize('UA-144274728-1');
-    ReactGA.pageview(window.location.pathname + this.transactionSteps[this.state.currentStep]);
   }
 
   componentDidMount() {
@@ -124,7 +120,6 @@ class App extends React.Component {
   }
 
   setStep = (step) => {
-    ReactGA.pageview(window.location.pathname + this.transactionSteps[step]);
     this.setState({currentStep: step});
   }
 
@@ -227,10 +222,6 @@ class App extends React.Component {
 
       if (transactionResults.success === true) {
         this.setStep(4);
-        ReactGA.event({
-          category: 'Transaction',
-          action: 'Success'
-        })
       } else {
         alert("There was an issue completing the transaction.\nSee the console for details.");
       }
