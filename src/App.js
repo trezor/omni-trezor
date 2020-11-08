@@ -130,24 +130,24 @@ class App extends React.Component {
       let transactions = accountResults.payload.utxo;
       let eligibleTxs = transactions.filter(tx => tx.value >= 8000);
       let sortedTxs = eligibleTxs.sort(tx => tx.value);
-      let addressPaths = eligibleTxs.map(tx => tx.addressPath).filter((v, i, a) => a.indexOf(v) === i);
+      let addressPaths = eligibleTxs.map(tx => tx.path).filter((v, i, a) => a.indexOf(v) === i);
       let eligibleAddrs = addressPaths.map(a => {
-        let tx = sortedTxs.find(tx => tx.addressPath === a);
+        let tx = sortedTxs.find(tx => tx.path === a);
         return({
           addressPath: a,
-          outTxHash: tx.transactionHash,
-          outTxIndex: tx.index,
+          outTxHash: tx.txid,
+          outTxIndex: tx.vout,
           outTxValue: tx.value
         });
       });
       let transactionApiResults = {};
       for (const a of eligibleAddrs) {
-        let txResultRaw = await fetch(`https://api.blockcypher.com/v1/btc/main/txs/${a.outTxHash}`);
+        let txResultRaw = await fetch(`https://blockstream.info/api/tx/${a.outTxHash}`);
         let txResultJson = await txResultRaw.json();
         transactionApiResults[a.outTxHash] = txResultJson;
       }
       eligibleAddrs = eligibleAddrs.map((a) => {
-        a.address = transactionApiResults[a.outTxHash].outputs[a.outTxIndex].addresses[0];
+        a.address = transactionApiResults[a.outTxHash].vout[a.outTxIndex].addresses[0];
         return a;
       });
       console.log('Detected eligible addresses:\n', eligibleAddrs);

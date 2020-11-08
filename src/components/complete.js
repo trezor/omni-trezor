@@ -15,8 +15,7 @@ class Complete extends React.Component {
 
         <div className="view-on-explorers">
           <a href={`https://omniexplorer.info/tx/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on Omni Explorer</a>
-          <a href={`https://live.blockcypher.com/btc/tx/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on BlockCypher</a>
-          <a href={`https://blockchair.com/bitcoin/transaction/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on Blockchair</a>
+          <a href={`https://btc1.trezor.io/tx/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on Trezor Blockbook</a>
         </div>
       </section>
     );

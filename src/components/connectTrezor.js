@@ -33,7 +33,8 @@ class ConnectTrezor extends React.Component {
   discoverAccounts = async () => {
     this.props.setLoading(true);
     let accountResults = await TrezorConnect.getAccountInfo({
-      coin: 'btc'
+      coin: 'btc',
+      details: 'tokens'
     });
     this.props.setLoading(false);
     this.props.parentCallback(accountResults);
