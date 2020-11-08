@@ -9,8 +9,8 @@ class ConnectTrezor extends React.Component {
       <article className="connect-trezor">
         <h3><FontAwesomeIcon icon={faExclamationTriangle} className="is-hidden"/> Please Read Before Continuing <FontAwesomeIcon icon={faExclamationTriangle} className="is-hidden"/></h3>
 
-        <div class="preflight-checklist-container">
-          <div class="checklist">
+        <div className="preflight-checklist-container">
+          <div className="checklist">
             <p>Have you...</p>
             <ul>
               <li>Checked that the URL bar says https://www.omnitrezor.com ?</li>

@@ -8,12 +8,12 @@ class Complete extends React.Component {
       <section className="complete-container">
         <h2>Transaction Complete <FontAwesomeIcon icon={faCheckCircle} /></h2>
 
-        <div class="transaction-hash">
+        <div className="transaction-hash">
           <p>Transaction Hash</p>
           <address>{this.props.transactionResults.payload.txid}</address>
         </div>
 
-        <div class="view-on-explorers">
+        <div className="view-on-explorers">
           <a href={`https://omniexplorer.info/tx/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on Omni Explorer</a>
           <a href={`https://live.blockcypher.com/btc/tx/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on BlockCypher</a>
           <a href={`https://blockchair.com/bitcoin/transaction/${this.props.transactionResults.payload.txid}`} target="_blank" rel="noopener noreferrer nofollow" className="button">View on Blockchair</a>
