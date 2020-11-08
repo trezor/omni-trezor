@@ -12,6 +12,32 @@ import SpecifyDetails from './components/specifyDetails';
 import ConfirmTransaction from './components/confirmTransaction';
 import Complete from './components/complete';
 
+// from connect/src/js/utils/pathUtils.js
+const HD_HARDENED = 0x80000000;
+const toHardened = (n) => (n | HD_HARDENED) >>> 0;
+const getHDPath = (path) => {
+  const parts = path.toLowerCase().split('/');
+  if (parts[0] !== 'm') throw 'Not a valid path';
+  return parts.filter((p) => p !== 'm' && p !== '')
+      .map((p) => {
+          let hardened = false;
+          if (p.substr(p.length - 1) === "'") {
+              hardened = true;
+              p = p.substr(0, p.length - 1);
+          }
+          let n = parseInt(p);
+          if (isNaN(n)) {
+              throw 'Not a valid path';
+          } else if (n < 0) {
+              throw 'Path cannot contain negative values';
+          }
+          if (hardened) { // hardened index
+              n = toHardened(n);
+          }
+          return n;
+      });
+};
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -128,8 +154,8 @@ class App extends React.Component {
       this.setLoading(true);
       this.setState({accountInfo: accountResults.payload});
       let transactions = accountResults.payload.utxo;
-      let eligibleTxs = transactions.filter(tx => tx.value >= 8000);
-      let sortedTxs = eligibleTxs.sort(tx => tx.value);
+      let eligibleTxs = transactions.filter(tx => parseInt(tx.amount) >= 8000);
+      let sortedTxs = eligibleTxs.sort(tx => parseInt(tx.amount));
       let addressPaths = eligibleTxs.map(tx => tx.path).filter((v, i, a) => a.indexOf(v) === i);
       let eligibleAddrs = addressPaths.map(a => {
         let tx = sortedTxs.find(tx => tx.path === a);
@@ -137,7 +163,7 @@ class App extends React.Component {
           addressPath: a,
           outTxHash: tx.txid,
           outTxIndex: tx.vout,
-          outTxValue: tx.value
+          outTxValue: parseInt(tx.amount)
         });
       });
       let transactionApiResults = {};
@@ -147,7 +173,7 @@ class App extends React.Component {
         transactionApiResults[a.outTxHash] = txResultJson;
       }
       eligibleAddrs = eligibleAddrs.map((a) => {
-        a.address = transactionApiResults[a.outTxHash].vout[a.outTxIndex].addresses[0];
+        a.address = transactionApiResults[a.outTxHash].vout[a.outTxIndex].scriptpubkey_address;
         return a;
       });
       console.log('Detected eligible addresses:\n', eligibleAddrs);
@@ -246,8 +272,6 @@ class App extends React.Component {
     ]
     let omniSimpleSendData = omniSegments.join('')
 
-    let fullAddressPath = this.state.accountInfo.path.concat(this.state.sendAddress.addressPath);
-
     var calculatedFee;
     var changeAmount;
     // If you have 12600 satoshi or more in the output, you get change.
@@ -261,7 +285,7 @@ class App extends React.Component {
     }
 
     let inputs = [{
-      address_n: fullAddressPath,
+      address_n: getHDPath(this.state.sendAddress.addressPath),
       prev_index: this.state.sendAddress.outTxIndex,
       prev_hash: this.state.sendAddress.outTxHash,
       amount: this.state.sendAddress.outTxValue.toString(),
@@ -283,7 +307,7 @@ class App extends React.Component {
 
     if (gettingChange) {
       outputs.push({
-        address_n: fullAddressPath,
+        address_n: getHDPath(this.state.sendAddress.addressPath),
         amount: changeAmount.toString(),
         script_type: 'PAYTOP2SHWITNESS'
       });
