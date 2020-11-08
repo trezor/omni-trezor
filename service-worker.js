@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/omni-trezor/precache-manifest.0872fed16d0dc2435ef2d66fba6d5e3f.js"
+  "/omni-trezor/precache-manifest.45084b258bc8cf452d390963f35effc6.js"
 );
 
 self.addEventListener('message', (event) => {

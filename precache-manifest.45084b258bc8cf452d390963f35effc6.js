@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8228d042a50c61c9867eeacc0efab7b9",
+    "revision": "42eef61e3607ddfc9001365c395d29dc",
     "url": "/omni-trezor/index.html"
   },
   {
