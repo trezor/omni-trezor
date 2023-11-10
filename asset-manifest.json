@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/omni-trezor/static/css/main.23e55897.chunk.css",
-    "main.js": "/omni-trezor/static/js/main.3c3fc732.chunk.js",
-    "main.js.map": "/omni-trezor/static/js/main.3c3fc732.chunk.js.map",
-    "runtime~main.js": "/omni-trezor/static/js/runtime~main.058ceebd.js",
-    "runtime~main.js.map": "/omni-trezor/static/js/runtime~main.058ceebd.js.map",
-    "static/js/2.f8a15ec8.chunk.js": "/omni-trezor/static/js/2.f8a15ec8.chunk.js",
-    "static/js/2.f8a15ec8.chunk.js.map": "/omni-trezor/static/js/2.f8a15ec8.chunk.js.map",
+    "main.css": "/omni-trezor/static/css/main.4df4ba97.css",
+    "main.js": "/omni-trezor/static/js/main.87b8da16.js",
     "index.html": "/omni-trezor/index.html",
-    "precache-manifest.45084b258bc8cf452d390963f35effc6.js": "/omni-trezor/precache-manifest.45084b258bc8cf452d390963f35effc6.js",
-    "service-worker.js": "/omni-trezor/service-worker.js",
-    "static/css/main.23e55897.chunk.css.map": "/omni-trezor/static/css/main.23e55897.chunk.css.map"
-  }
+    "main.4df4ba97.css.map": "/omni-trezor/static/css/main.4df4ba97.css.map",
+    "main.87b8da16.js.map": "/omni-trezor/static/js/main.87b8da16.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4df4ba97.css",
+    "static/js/main.87b8da16.js"
+  ]
 }
