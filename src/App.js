@@ -1,5 +1,5 @@
 import React from 'react';
-import TrezorConnect from 'trezor-connect';
+import TrezorConnect from '@trezor/connect-web';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +17,7 @@ const HD_HARDENED = 0x80000000;
 const toHardened = (n) => (n | HD_HARDENED) >>> 0;
 const getHDPath = (path) => {
   const parts = path.toLowerCase().split('/');
-  if (parts[0] !== 'm') throw 'Not a valid path';
+  if (parts[0] !== 'm') throw new Error('Not a valid path');
   return parts.filter((p) => p !== 'm' && p !== '')
       .map((p) => {
           let hardened = false;
@@ -27,9 +27,9 @@ const getHDPath = (path) => {
           }
           let n = parseInt(p);
           if (isNaN(n)) {
-              throw 'Not a valid path';
+              throw new Error('Not a valid path');
           } else if (n < 0) {
-              throw 'Path cannot contain negative values';
+              throw new Error('Path cannot contain negative values');
           }
           if (hardened) { // hardened index
               n = toHardened(n);
