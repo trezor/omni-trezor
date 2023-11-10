@@ -1,15 +1,15 @@
 # the last successful build of nixos-20.09 (stable) as of 2020-10-11
 with import
   (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/0b8799ecaaf0dc6b4c11583a3c96ca5b40fcfdfb.tar.gz";
-    sha256 = "11m4aig6cv0zi3gbq2xn9by29cfvnsxgzf9qsvz67qr0yq29ryyz";
+    url = "https://github.com/NixOS/nixpkgs/archive/9957cd48326fe8dbd52fdc50dd2502307f188b0d.tar.gz";
+    sha256 = "1l2hq1n1jl2l64fdcpq3jrfphaz10sd1cpsax3xdya0xgsncgcsi";
   })
 { };
 
 stdenv.mkDerivation {
   name = "trezor-omni-dev";
   buildInputs = [
-    nodejs
+    nodejs_20
   ];
   shellHook = ''
     export PATH="$PATH:$(pwd)/node_modules/.bin"
