@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/omni-trezor/static/css/main.4df4ba97.css",
-    "main.js": "/omni-trezor/static/js/main.87b8da16.js",
+    "main.js": "/omni-trezor/static/js/main.3162eaf6.js",
     "index.html": "/omni-trezor/index.html",
     "main.4df4ba97.css.map": "/omni-trezor/static/css/main.4df4ba97.css.map",
-    "main.87b8da16.js.map": "/omni-trezor/static/js/main.87b8da16.js.map"
+    "main.3162eaf6.js.map": "/omni-trezor/static/js/main.3162eaf6.js.map"
   },
   "entrypoints": [
     "static/css/main.4df4ba97.css",
-    "static/js/main.87b8da16.js"
+    "static/js/main.3162eaf6.js"
   ]
 }
