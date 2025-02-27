@@ -9,7 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.1.12",
     "@trezor/connect-web": "^9.1.5",
     "bulma": "^0.9.4",
-    "node-sass": "^9.0.0",
+    "node-sass": "npm:sass@^1.85.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
