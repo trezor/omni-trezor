@@ -1,13 +1,13 @@
 {
   "name": "omni-trezor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "homepage": "https://trezor.github.io/omni-trezor",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
-    "@trezor/connect-web": "^9.1.5",
+    "@trezor/connect-web": "^9.5.0",
     "bulma": "^0.9.4",
     "node-sass": "npm:sass@^1.85.1",
     "react": "^18.2.0",
